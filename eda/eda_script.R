@@ -9,6 +9,19 @@ metadatar <- list(script_starttime = Sys.time(),
                   seed_set = 6)
 metadatar
 
+# start the clock timer, used for monitoring runtimes
+clockin <- function() {
+  aa <- Sys.time()
+  clock_timer_start <<- aa
+  return(aa)}
+
+# end the clock timer, used in conjunction with the clockin fun
+clockout <- function(x) {
+  aa <- clock_timer_start
+  bb <- Sys.time()
+  cc <- bb - aa
+  return(cc)}
+
 # source the script that will load the data and prep it for analysis
 sourcerpath <- paste0(getwd(), '/eda/remodel/remodel_script.R')
 clockin()
