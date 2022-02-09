@@ -57,19 +57,6 @@ data_dictionary <- function(aa) {
                    row.names = NULL)
   return(dd)}
 
-# start the clock timer, used for monitoring runtimes
-clockin <- function() {
-  aa <- Sys.time()
-  clock_timer_start <<- aa
-  return(aa)}
-
-# end the clock timer, used in conjunction with the clockin fun
-clockout <- function(x) {
-  aa <- clock_timer_start
-  bb <- Sys.time()
-  cc <- bb - aa
-  return(cc)}
-
 # helps turn a character dollar variable into numeric
 #   requires stringr, uncomment last line to turn NA to zero
 cash_money <- function(x) {
