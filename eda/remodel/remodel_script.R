@@ -105,3 +105,28 @@ ls()
 trash()
 mem_used()
 
+# date cleaning function for filtering in analysis -----------------
+
+fun_dater <- function(arg_sdt, arg_edt) {
+  x <- as.Date(arg_sdt)
+  y <- as.Date(arg_edt)
+  z <- paste0('Dates: ', x, ' to ', y, '; ')
+  return_me <- list(start_date = x, 
+                    end_date = y, 
+                    date_text_str = z)
+  return(return_me)
+}
+
+# ^ -----
+
+# load the etl metadata for reference ------------------------
+
+# load a csv file
+loader_path1 <- paste0(getwd(), "/etl/etl_metadata.csv")
+clockin()
+etl_metadata <- read.csv(loader_path1, stringsAsFactors = FALSE)
+clockout()
+etl_metadata
+
+
+# ^ -----

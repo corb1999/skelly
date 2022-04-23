@@ -31,9 +31,22 @@ mem_used()
 
 # viz prep ---------------------------------------------------
 
-pltname <- 'hello' %ps% 'world'
+dt_filters <- fun_dater('2019-01-01', 
+                        '2020-01-01')
 
-dfplt <- dfa
+major_filter <- c('foo', 'bar')
+
+(pltname <- 'hello ' %ps% 
+    'world; ' %ps% 
+    reduce(major_filter, paste, sep = '; ') %ps% '; ' %ps% 
+    dt_filters$date_text_str %ps% 
+    '')
+
+dfplt <- dfa %>% 
+  filter(major %in% major_filter) %>% 
+  filter(date_var >= dt_filters$start_date, 
+         date_var <= dt_filters$end_date) %>% 
+  filter(foobar == 1)
 
 # ^ -----
 

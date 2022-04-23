@@ -130,3 +130,28 @@ saveRDS(dfa, file = filename)
 clockout()
 
 # ^ ----- 
+
+# summarize and record etl -------------------------------------
+
+(interim <- list(a = Sys.info(), 
+                 b = nrow(dfa), 
+                 c = ncol(dfa), 
+                 d = sizer(dfa)))
+
+# create an etl summary object
+etl_metadata <- data.frame(etl_runtime = metadatar$script_starttime, 
+                           etl_user = interim$a[[8]], 
+                           data_rows = interim$b, 
+                           data_cols = interim$c, 
+                           data_size = interim$d, 
+                           etl_note = 'no notes')
+etl_metadata
+rm(interim)
+
+# write to csv
+filename <- paste0(getwd(), "/etl/etl_metadata.csv")
+clockin()
+write.csv(etl_metadata, file = filename, row.names = FALSE)
+clockout()
+
+# ^ ----- 
