@@ -51,6 +51,7 @@ viewer <- function(x) {
 
 # a function to make a quick data dictionary of a data frame
 data_dictionary <- function(aa) {
+  aa <- data.frame(aa)
   dd <- data.frame(column_order = seq(1, ncol(aa)), 
                    column_name_text = colnames(aa), 
                    column_class = sapply(aa, class, simplify = TRUE), 
