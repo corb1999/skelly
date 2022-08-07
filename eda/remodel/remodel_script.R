@@ -56,7 +56,11 @@ data_dictionary <- function(aa) {
                    row_04 = sapply(aa[4, ], as.character, simplify = TRUE),
                    row_05 = sapply(aa[5, ], as.character, simplify = TRUE),
                    row.names = NULL)
-  return(dd)}
+  ee <- list(dims = data.frame(row_n = nrow(aa), col_n = ncol(aa)), 
+             obj_size = object.size(aa), 
+             c_names = c(colnames(aa)), 
+             dict = dd)
+  return(ee)}
 
 # helps turn a character dollar variable into numeric
 #   requires stringr, uncomment last line to turn NA to zero
