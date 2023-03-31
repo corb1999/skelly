@@ -19,7 +19,6 @@ library(tidyverse)
 library(tidylog)
 library(lubridate)
 library(scales)
-# library(gt)
 library(janitor)
 set.seed(metadatar$seed_set[1])
 options(digits = 4, max.print = 99, warnPartialMatchDollar = TRUE, 
@@ -123,6 +122,8 @@ clockout()
 rm(raw_df)
 ls()
 trash()
+sizer(dfa)
+lobstr::obj_size(dfa)
 
 # ^ ----- 
 
