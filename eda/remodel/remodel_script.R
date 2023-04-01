@@ -120,5 +120,4 @@ etl_metadata <- read.csv(loader_path1, stringsAsFactors = FALSE)
 clockout()
 etl_metadata
 
-
 # ^ -----

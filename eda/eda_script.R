@@ -61,6 +61,8 @@ dfplt <- dfa %>%
          date_var <= dt_filters$end_date) %>% 
   filter(foobar == 1)
 
+grouper <- 'example_variable'
+
 # ^ -----
 
 # run plots and visuals ------------------------------------
