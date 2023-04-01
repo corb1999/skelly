@@ -1,0 +1,53 @@
+---
+title: "report_template"
+format: html 
+toc: true 
+number-sections: true 
+editor: visual
+---
+
+```{r}
+#| echo: false
+#| output: false
+
+# this is the setup chunk to set the root directory to the proj dir
+library(knitr)
+library(stringr)
+
+knitr::opts_chunk$set(root.dir = stringr::str_sub(getwd(), end = -9L))
+
+```
+
+## Introduction
+
+Carpe Diem.
+
+::: callout-note
+Beware the Ides of March.
+:::
+
+## Section A
+
+Veni Vidi Vici.
+
+## Section B
+
+SPQR.
+
+{{< pagebreak >}}
+
+## Appendix
+
+Rendered on:
+
+```{r}
+#| echo: false
+#| output: true 
+Sys.time()
+```
+
+Reference Links:
+
+- <https://github.com/corb1999>
+
+- [RStudio](https://posit.co/)
